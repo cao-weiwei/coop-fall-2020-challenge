@@ -4,7 +4,8 @@ import collections
 The logic behind this class is that using Stack to storage the operations except `undo` and `redo`. 
 - For example, for `add()` and `subtract()`, push the function name and parameters into the stack after each calling
 
-If encounter `undo()` operation, 
+If calling `undo()` operation, pop the last valid operation from the stack and push the poped item into a double-end queue
+If calling `redo()` operation, pop the last valid operation from the deouble-ended queue from the head, and push the performed operation (add/subtract) into the stack
 """
 
 
